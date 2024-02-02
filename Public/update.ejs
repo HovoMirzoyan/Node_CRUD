@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        margin: 20px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    th, td {
+        border: 1px solid #e0e0e0;
+        padding: 15px;
+        text-align: left;
+    }
+    
+    th {
+        background-color: #3498db;
+        color: white;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    form {
+        margin-top: 20px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    form input {
+        margin-bottom: 15px;
+        padding: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+    
+    form input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+        padding: 12px;
+        transition: background-color 0.3s ease;
+    }
+    
+    form input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+    a.update, a.delete {
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 6px;
+        transition: opacity 0.3s ease;
+    }
+    
+    a.update {
+        background-color: #3498db;
+    }
+    
+    a.delete {
+        background-color: #e74c3c;
+    }
+    
+    a.update:hover, a.delete:hover {
+        opacity: 0.8;
+    }
+    
+    
+    
+    
+    </style>
+    </table>
+    <form action="/updateData" method="post">
+        <input id="PrName" type="text" required name="name" placeholder="Name" value = "<%= obj.name %>"><br><br>
+        <input id="PrAge" type="number" name="age" placeholder="Age" value = "<%= obj.age %>"><br><br>
+        <input id="PrEye" type="text" name="eye" placeholder="Eye"  value = "<%= obj.eye %>"><br><br>
+        <input id="PrGender" type="text" name="gender" placeholder="Gender"  value = "<%= obj.gender %>"><br><br>
+        <input id="PrSurname" type="text" name="surname" placeholder="Surname"  value = "<%= obj.surname %>"><br><br>
+        <!-- <input id="PrUUID" type="number" name="uuid" placeholder="UUID"  value = "<%= obj.uuid %>"><br><br> -->
+        <input  type="hidden" name="id"   value = "<%= obj._id %>"><br><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

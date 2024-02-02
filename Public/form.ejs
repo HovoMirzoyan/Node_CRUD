@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Eye</td>
+            <td>Gender</td>
+            <td>Surname</td>
+            <td>Update</td>
+            <td>Delete</td>
+        </tr>
+         <% obj.forEach(function(justOne) { %>
+        <tr>
+            <td><%= justOne.name %></td>
+            <td><%= justOne.age %></td>
+            <td><%= justOne.eye %></td>
+            <td><%= justOne.gender %></td>
+            <td><%= justOne.surname %></td>
+            <td><a class="update" href="update/<%= justOne._id %>">Update</a></td>
+            <td><a class="delete" href="delete/<%= justOne._id %>">Delete</a></td>
+        </tr>
+    <% }); %>
+    </table>
+    <form action="/addName" method="post">
+        <input id="PrName" type="text" required name="name" placeholder="Name"><br><br>
+        <input id="PrAge" type="number" name="age" placeholder="Age"><br><br>
+        <input id="PrEye" type="text" name="eye" placeholder="Eye"><br><br>
+        <input id="PrGender" type="text" name="gender" placeholder="Gender"><br><br>
+        <input id="PrSurname" type="text" name="surname" placeholder="Surname"><br><br>
+        <!-- <input id="PrUUID" type="text" name="uuid" placeholder="UUID"><br><br> -->
+        <input id="id" type="hidden" name="id" ><br><br>
+        <input type="submit" onclick="getVal()" >
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
